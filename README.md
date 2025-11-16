@@ -1,6 +1,12 @@
- # Fundamentos Java - Bootcamp Java DIO
+<h1>
+    <a href="https://www.dio.me/">
+     <img align="center" width="40px" src="https://hermes.digitalinnovation.one/assets/diome/logo-minimized.png"></a>
+    <span> Fundamentos Java - Bootcamp Java</span>
+</h1>
+
  - Criado por: José Luiz Abreu Cardoso Junior
- > Minhas resoluções dos seguintes exercícios a seguir!!!
+ - Resolução: Clarissa Morita
+ > Este repositório contém as resoluções dos seguintes exercícios:
 ---
 1. Escreva um código que receba o nome e o ano de nascimento de alguém e imprima na tela a seguinte mensagem: "Olá 'Fulano' você tem 'X' anos"
 
