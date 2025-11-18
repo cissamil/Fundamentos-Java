@@ -19,6 +19,6 @@ public class numeroDivisao {
 
         // se não for menor, verificar divisibilidade
     } while (num2 % num1 == 0 || num2 < num1);
-
+    scanner.close();
     }
 }
