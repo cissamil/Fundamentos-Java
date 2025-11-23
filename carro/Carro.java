@@ -71,7 +71,7 @@ public class Carro {
     private boolean velocidadeMarcha(int marcha, int v){
         return switch (marcha){
             case 0 -> v == 0;
-            case 1 -> v > 0 && v <= 20;
+            case 1 -> v >= 0 && v <= 20;
             case 2 -> v >= 21 && v <= 40;
             case 3 -> v >= 41 && v <= 60;
             case 4 -> v >= 61 && v <= 80;
