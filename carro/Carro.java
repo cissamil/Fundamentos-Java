@@ -1,39 +1,164 @@
-/* 
-    Carro:
-        Ligar o carro;
-        Desligar o carro;
-        Acelerar;
-        diminuir velocidade;
-        virar para esquerda/direita
-        verificar velocidade;
-        trocar a marcha
-
-Regras:
-    1) Quando o carro for criado ele deve começar desligado, em ponto morto e com sua velocidade em 0
-    2) O carro desligado não pode realizar nenhuma função;
-
-    3) Quando o carro for acelerado ele deve incrementar 1km em sua velocidade (pode chegar no máximo a 120km);
-    4) Quando diminuir a velocidade do carro ele deve decrementar 1 km de sua velocidade (pode chegar no minimo a 0km);
-
-    5) o carro deve possuir 6 marchas, não deve ser permitido pular uma marcha no carro;
-    
-    6) A velocidade do carro deve respeitar os seguintes limites para cada velocidade
-        se estiver na 0 (ponto morto) ele não pode acelerar
-        se estiver na 1ª  0km e 20km
-        se estiver na 2ª  21km e 40km
-        se estiver na 3ª  41km e 60km
-        se estiver na 4ª  61km e 80km
-        se estiver na 5ª  81km e 100km
-        se estiver na 6ª  101km e 120km
-    
-    7) O carro podera ser desligado se estiver em ponto morto (marcha 0) e sua velocidade em 0 km
-    8) O carro só pode virar para esquerda/direita se sua velocidade for de no mínimo 1km e no máximo 40km;
-
-*/
-
 package carro;
 
+
 public class Carro {
+    private boolean ligado;
+    private int marcha;
+    private int velocidade;
     
+    public Carro(){
+        this.ligado = false;
+        this.marcha = 0;
+        this.velocidade = 0;
+    }
+
+    public void ligar(){
+        if(ligado){
+            System.out.println("Seu carro ja esta ligado!");
+            return;
+        }
+
+        ligado = true;
+        System.out.println("Carro ligado!");
+
+    }
+
+    public void desligar(){
+        if(!ligado){
+            System.out.println("Seu carro ja esta desligado!");
+            return;
+        }
+        if(marcha !=0){
+            System.out.println("Coloque no ponto morto primeiro.");
+            return;
+        }
+        if(velocidade != 0){
+            System.out.println("Carro precisa estar na velocidade 0");
+            return;
+        }
+
+        
+        ligado = false;
+        System.out.println("Carro desligado!");
+    }
+
+    public void trocarMarcha(int novaMarcha){
+        if(!ligado){
+            System.out.println("Carro desligado");
+            return;
+
+        }
+        if(novaMarcha < 0 || novaMarcha > 6){
+            System.out.println("Marcha invalida!");
+            return;            
+        }
+
+        if(Math.abs(novaMarcha - marcha) > 1){
+            System.out.println("Nao pule marchas");
+            return;
+        }
+
+        if(!velocidadeMarcha(novaMarcha, velocidade)){
+            System.out.println("Velocidade incompativel com a a marcha");
+            return;
+        }
+        
+        marcha = novaMarcha;
+        System.out.println("Marcha trocada para: " + marcha);
+        
+    }
+
+    private boolean velocidadeMarcha(int marcha, int v){
+        return switch (marcha){
+            case 0 -> v == 0;
+            case 1 -> v > 0 && v <= 20;
+            case 2 -> v >= 21 && v <= 40;
+            case 3 -> v >= 41 && v <= 60;
+            case 4 -> v >= 61 && v <= 80;
+            case 5 -> v >= 81 && v <= 100;
+            case 6 -> v >= 101 && v <= 120;
+            default -> false;
+        };
+    }
+
+    public void acelerar(){
+        if(!ligado){
+            System.out.println("Carro desligado");
+            return;
+        }
+
+        if(marcha == 0){
+            System.out.println("Carro em ponto morto, engate a primeira");
+            return;
+        }
+        if(velocidade>=120){
+            System.out.println("Velocidade maxima atingida (120km/h)!");
+            return;
+        }
+        //calculo da nova velocidade
+        int novaVelocidade = velocidade + 1;
+
+        //velocidade tem que ser compativel a marcha atual
+        if(!velocidadeMarcha(marcha, novaVelocidade)){
+            System.out.println("Velocidadde nao compativel com a marcha atual, troque de marcha primeiro para acelerar!");
+            return;
+        }
+
+        velocidade= novaVelocidade;
+        System.out.println("Velocidade atual:" + velocidade + "km/h");
+    }
+    
+    public void diminuirVelocidade(){
+        if(!ligado){
+            System.out.println("Carro desligado");
+            return;
+        }
+        if(velocidade == 0){
+            System.out.println("Velocidade minima atingida (0km/h)!");
+            return;
+        }
+
+        int diminuiVelocidade = velocidade -1;
+         if(!velocidadeMarcha(marcha, diminuiVelocidade)){
+            System.out.println("Velocidade nao compativel com a marcha atual, troque desacelerar!");
+            return;
+        }
+
+        velocidade = diminuiVelocidade;
+        System.out.println("Velocidade atual:" + velocidade + "km/h");
+    }
+
+
+    public void virar(String direcao){
+         if(!ligado){
+            System.out.println("Carro desligado");
+            return;
+        }
+
+        if(velocidade < 1 || velocidade > 40){
+             System.out.println("Carro excedeu o limite maximo e minimo de velocidade para virar a esquerda/direita!");
+             return;
+        }
+
+        direcao = direcao.toLowerCase();
+
+        if(!direcao.equals("esquerda") && !direcao.equals("direita")){
+            System.out.println("Direcao invalida, escreva esquerda ou direita");
+            return;
+        }
+
+        System.out.println("Virando para: " + direcao);
+
+
+    }
+
+    public void verificarVelocidade(){
+        if(!ligado){
+            System.out.println("Carro desligado");
+            return;
+        }
+
+        System.out.println(velocidade);
+    }
     
 }
