@@ -1,6 +1,6 @@
-package banco;
+package Classe.banco;
 import java.util.Scanner;
-public class Interface {
+public class Main {
     public static void main(String[] args){
         var scanner = new Scanner(System.in);
         System.out.printf("Bem vindo(a) ao Banco do Yellow Musk, digite o valor do deposito inicial: ");

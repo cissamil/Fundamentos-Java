@@ -1,7 +1,7 @@
-package banhoPetshop;
+package Classe.banhoPetshop;
 import java.util.Scanner;
 
-public class Interface {
+public class Main {
     public static void main(String args[]){
         var scanner = new Scanner(System.in);
         System.out.println("Bem vindo ao YellowShop, a melhor banho & tosa da cidade!");

@@ -1,4 +1,4 @@
-package banhoPetshop;
+package Classe.banhoPetshop;
 
 public class Maquina {
     // Capacidade máxima de recursos

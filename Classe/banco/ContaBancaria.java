@@ -1,4 +1,4 @@
-package banco;
+package Classe.banco;
 
 public class ContaBancaria {
     private double saldo;
