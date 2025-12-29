@@ -4,7 +4,8 @@
     <span> Exercícios Java - Bootcamp DIO </span>
 </h1>
 
- - Criado por: José Luiz Abreu Cardoso Junior  [Exercícios Java Básico - Digital Innovation One](https://github.com/digitalinnovationone/exercicios-java-basico.git)
+ [Exercícios Java Básico - Digital Innovation One](https://github.com/digitalinnovationone/exercicios-java-basico.git)
+ - Criado por: José Luiz Abreu Cardoso Junior  
  - Resolução: Clarissa Morita
  > Este repositório contém as resoluções dos seguintes exercícios:
 ---
