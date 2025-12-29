@@ -12,6 +12,7 @@ package herancaPoli.Usuarios;
     A classe Atendente: Receber pagamentos (onde o método recebe um valor que deve ser incrementado no valor em caixa), Fechar o caixa, Realizar Login, Realizar logoff, alterar dados e alterar senha;
 */
 
+//encapsulamento
 public class Usuario {
 
     private String nome;
@@ -19,7 +20,7 @@ public class Usuario {
     private String senha;
     private boolean admin;
 
-    //construtor
+    //construtor inicializa os atributos normalmente no Main.java
     public Usuario(String nome, String email, String senha, boolean admin){
         this.nome = nome;
         this.email = email;
@@ -27,7 +28,7 @@ public class Usuario {
         this.admin = admin;    
     }
 
-    //getters e setters
+    //getters(ler) e setters(altera)
     public String getNome() {
         return nome;
     }
