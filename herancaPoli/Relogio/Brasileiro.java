@@ -6,6 +6,5 @@ public class Brasileiro extends Horario {
         this.setHora(outroRelogio.getHora());
         this.setMinuto(outroRelogio.getMinuto());
         this.setSegundo(outroRelogio.getSegundo());
-
     }
 }
