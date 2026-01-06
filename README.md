@@ -6,7 +6,7 @@
 
  [Exercícios Java Básico - Digital Innovation One](https://github.com/digitalinnovationone/exercicios-java-basico.git)
  - Criado por: José Luiz Abreu Cardoso Junior  
- - Resolução: Clarissa Morita
+ - Resolução: Clarissa Eri Morita
  > Este repositório contém as resoluções dos seguintes exercícios:
 ---
 
